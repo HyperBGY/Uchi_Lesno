@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Russo+One&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&family=Tilt+Warp&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="sitestyle.css" media="screen" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>скибиди</title>
+    <script src="/scripts/homescript.js"></script>
+
+    <nav id="nav">
+
+        <div style="margin-right: 1.042vw;margin-left: 0.521vw;margin-top:0.521vw;">
+
+        <a href="/src/index.html">
+
+            <img id="logo" src="/assets/Uchi_Lesno_2025.png" style="height: 4.167vw;position: relative;float: left;">
+
+
+
+        </a>
+
+        <div class="dropdown">
+
+
+            <img id="menuicon" class="dropbtn" src="/assets/menuicon.png">
+            <div id="menu-content" class="dropdown-content">
+              <a href="1page.html">Настройки</a>
+              <a href="2page.html">Свържете се</a>
+              <a href="3page.html">Скинове</a>
+            </div>
+          </div>
+        </div>
+
+        <table style="margin-right: 36.458vw;" id="links">
+
+            <tr>
+
+                <td>
+
+                    <a href="/src/home.html">
+
+                        <p id="home">
+                            Начало
+                        </p>
+
+                        <img id="backIcon" src="/icons/homeIcon.svg">
+
+                    </a>
+
+                </td>
+
+                <td>
+
+                    <a href="/src/aboutUs.html">
+
+                        <p id="stat">
+                            Статиски
+                        </p>
+                        
+                        <img id="statIcon" src="/icons/statsIcon.svg">
+
+                    </a>
+
+                </td> 
+
+                <td>
+
+                    <a href>
+
+                        <p id="news">
+                            Новини
+                        </p>
+                        <img id="newsIcon"  src="/icons/newsIcon.svg">
+
+                    </a>
+
+                </td> 
+
+            </tr>
+        </table>
+
+
+  
+
+    </nav>
+    
+</head>
+<body">
+
+    <div style="padding-top: 7.813vw;">
+
+    </div>
+
+    <div style="  margin: auto;
+    background-color: rgb(98, 163, 224);
+    width: 78.125vw;
+    height: 57.292vw;">
+
+<div style="padding-top: 5.208vw;">
+
+</div>
+
+    <table cellspacing="0" style="margin: auto;">
+
+        <tr>
+            <div id="buttons">
+
+                <input id="submitBox" type="submit" value="Добави събитие">
+
+
+                    <input id="pageNumButton" min="1" max="5" value="1" type="number" >
+
+                    <input id="eventSearchBox" type="search"> </input>
+
+
+                <input id="deleteAllBox" type="reset" value="Изтрий всички">
+                
+            </div>
+        </tr>
+
+        <tr>
+        <div style="overflow-y: scroll;max-height: 15.625vw;width: 73.802vw;margin: auto;">
+
+            <table id="eventBook" cellspacing="0" >
+        
+                <tr id="boxNames" >
+        
+                    <td style="max-width: 1.042vw;text-align: center;">
+        
+                        <p>
+                            №
+                        </p>
+
+                    </td>
+
+                    <td>
+        
+                        <p>
+                            Заглавие
+                        </p>
+
+                    </td>
+        
+                    <td>
+        
+                        <p>
+                            Описание
+                        </p>
+
+                    </td>
+
+                    <td>
+        
+                        <p>
+                            Дата
+                        </p>
+                    </td>
+        
+                    <td>
+        
+                        <p>
+                            Час
+                        </p>
+
+                    </td>
+
+                </tr>
+
+                <tr id="eventInput">
+
+                    <td style="min-width:6.771vw;">
+        
+                    </td>
+        
+                    <td>
+        
+                        <div id="eventBoxBox">
+
+                            <input id="eventNameBox">
+        
+                        </div>
+                    </td>
+        
+                    <td>
+
+                        <div id="eventBoxBox">
+
+                            <input id="eventDescriptionBox">
+        
+                        </div>
+        
+                    </td>
+                    <td>
+        
+                        <div id="eventBoxBox">
+
+                            <input type="date" id="eventDateBox">
+        
+                        </div>
+
+                    </td>
+        
+                    <td>
+        
+                        <div id="eventBoxBox">
+
+                            <input type="time" id="eventTimeBox">
+        
+                        </div>
+
+                    </td>
+
+                    
+                </tr>
+        
+            </table>
+        
+            </div>
+
+            </tr>
+
+            
+
+        </table>
+
+
+
+    </div>
+
+    <div style="padding-top: 2.604vw;">
+
+    </div>
+    
+
+   
+
+    <footer>
+
+        <table>
+
+            <tr>
+
+                <td>
+
+                    <img style="height: 5.208vw" src="/assets/Uchi_Lesno_2025_Crop.png">
+
+                </td>
+
+                <td>
+
+                    <h1 style="font-size: 3.125vw;padding-left: 1.042vw;">
+
+                        Учи лесно
+
+                    </h1>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <br>
+
+        <table>
+
+            <tr style="align-items: flex-start;display: flex;">
+
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <p style="font-size: 1.302vw;font-weight: 700;">
+
+                                За нас
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                Учи лесно™️
+
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                Отборът ни
+
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                Правила и условия
+
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <p style="font-size: 1.302vw;font-weight: 700;">
+
+                                Свържете се
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                <img src="/assets/socials icon.png">
+
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                <img src="/assets/aaa.png">
+
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                <img src="/assets/X_logo_2023_(white).png">
+
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <ul>
+
+                        <li>
+
+                            <p style="font-size: 1.302vw;font-weight: 700;">
+
+                                Навигация
+                            </p>
+
+                        </li>
+
+                        <li>
+                            
+                            <p>
+
+                                <a href="">
+
+                                    Начало
+
+                                </a>
+
+                            </p>
+
+                        </li>
+
+                    </ul>
+                    
+                </td>
+
+            </tr>
+
+        </table>
+
+        <br>
+
+        <hr>
+
+
+    </footer>
+
+    
+</body>
+</html>

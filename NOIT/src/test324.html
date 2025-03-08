@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Picker</title>
+    <style>
+        .day-picker {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        input[type="number"] {
+            width: 60px;
+            text-align: center;
+            font-size: 18px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="day-picker">
+        <button onclick="changeDay(-1)">&#9665;</button> <!-- Left Arrow -->
+        <input type="number" id="dayInput" min="1" max="31" value="1">
+        <button onclick="changeDay(1)">&#9655;</button> <!-- Right Arrow -->
+    </div>
+
+    <script>
+        const input = document.getElementById('dayInput');
+
+        function changeDay(direction) {
+            let currentValue = parseInt(input.value) || 1;
+
+            let newValue = currentValue + direction;
+            if (newValue < 1) newValue = 31;  // Wrap around to 31 if going below 1
+            if (newValue > 31) newValue = 1;  // Wrap around to 1 if exceeding 31
+
+            input.value = newValue;
+        }
+
+        input.addEventListener("input", function() {
+            let value = parseInt(input.value);
+            if (isNaN(value) || value < 1) input.value = 1;
+            if (value > 31) input.value = 31;
+        });
+    </script>
+
+</body>
+</html>

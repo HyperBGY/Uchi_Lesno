@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Action Example</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Resize the window to see the effect!</h1>
+
+  <script>
+    function handleMediaChange(e) {
+      if (e.matches) {
+        document.body.style.backgroundColor = 'lightgreen';
+      } else {
+        document.body.style.backgroundColor = 'lightskyblue';
+      }
+    }
+  
+    const mediaQuery = window.matchMedia('(max-width: 1000px)');
+    mediaQuery.addListener(handleMediaChange);
+    handleMediaChange(mediaQuery); // Initial check
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Sofia Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(236, 224, 209) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wrapper {
+            width: 750px;
+            background: rgba(255, 255, 255, .1);
+            border: 2px solid rgba(255, 255, 255, .2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            backdrop-filter: blur(50px);
+            border-radius: 10px;
+            color: black;
+            padding: 40px 35px 55px;
+            margin: 0 10px;
+        }
+
+        .wrapper h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .input-field {
+            position: relative;
+            width: 48%;
+            margin: 13px 0;
+        }
+
+        .input-field input {
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            outline: none;
+            font-size: 18px;
+            color: black;
+            border-radius: 6px;
+            padding: 15px 15px 15px 40px;
+        }
+
+        .input-field input::placeholder {
+            color: black;
+        }
+
+        .input-field i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .wrapper label {
+            display: block;
+            font-size: 18.5px;
+            margin: 10px 0;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: rgb(9, 135, 238);
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(85, 100, 84, 0.329);
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .input-field {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <form action="/register" method="POST">     
+        <h1>Регистрация</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="alert alert-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" name="name" placeholder="Име" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-field">
+                <input type="text" name="username" placeholder="Потребителско име" required>
+                <i class='bx bxs-user'></i>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-field">
+                <input type="email" name="email" placeholder="Имейл" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-field">
+                <input type="tel" name="phone" placeholder="Телефонен номер" required>
+                <i class='bx bxs-phone'></i>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Парола" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-field">
+                <input type="password" name="confirm_password" placeholder="Потвърди парола" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+        </div>
+
+        <label>
+            <input type="checkbox" required> Съгласявам се с <a href="#">правилата и условията.</a>
+        </label>
+
+        <button type="submit" class="btn">Регистрация</button>
+    </form>
+
+    <p>Вече имате акаунт? <a href="{{ url_for('login') }}">Влезте</a></p>
+</div>
+
+</body>
+</html>

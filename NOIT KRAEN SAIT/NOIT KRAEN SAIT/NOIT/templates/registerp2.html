@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Russo+One&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&family=Tilt+Warp&display=swap" rel="stylesheet">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<link rel="stylesheet" type="text/css" href="sstyle.css" media="screen" />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+<style>
+.sofia-sans {
+  font-family: "Sofia Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.input-box{
+      i{
+            color: rgb(74, 163, 236);
+      }
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+font-family: "Sofia Sans";
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: rgb(236, 224, 209) no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.wrapper {
+width: 1500px;
+background: rgba(255, 255, 255, .1);
+border: 2px solid rgba(255, 255, 255, .2);
+box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+backdrop-filter: blur(50px);
+border-radius: 10px;
+color: black;
+padding: 40px 40px 55px;
+}
+
+.wrapper h1 {
+font-size: 40px;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.wrapper .input-box {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.input-box .input-field {
+position: relative;
+margin: auto
+}
+
+.input-box .input-field input::placeholder {
+color: rgb(255, 255, 255);
+}
+
+
+.wrapper .btn {
+margin-left: 25%;
+width: 50%;
+height: 45px;
+background: rgb(74, 163, 236);
+border: none;
+outline: none;
+border-radius: 6px;
+box-shadow: 0 0 10px rgba(85, 100, 84, 0.329);
+cursor: pointer;
+font-size: 20px;
+color: #fff;
+font-weight: 600;
+}
+
+.studentoptions button{
+
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    border: none;
+    font-size: 35px;
+}
+
+.otlichnik{
+    background-image: url(/assets/otlichnik.png);
+    background-color: rgb(74, 163, 236); ;
+}
+
+.znaniq{
+    background-image: url(/assets/knowledge.png);
+    background-color: rgb(64, 128, 212);
+}
+
+.stipendia{
+    background-image: url(/assets/stipendia.png);
+    background-color: rgb(46, 104, 179);
+}
+
+@media (max-width: 576px) {
+.input-box .input-field {
+width: 100%;
+margin: 10px 0;
+}
+}
+</style>
+
+<div class="wrapper">
+<form action="registerp3.html" method="POST">     
+<h1 >За какво се борите в училище?</h1>
+    <div class="input-box">
+
+        <div class="input-field">
+
+            <table class="studentoptions" cellspacing="20px" >
+
+                <tr>
+
+                    <td>
+                        <a href="javascript:void(0);" onclick="selectOption('отлични оценки')">
+                            <button class="otlichnik">
+                                За отлични оценки 
+                            </button>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="javascript:void(0);" onclick="selectOption('знания')">
+                            <button class="znaniq">
+                                За знания
+                            </button>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="javascript:void(0);" onclick="selectOption('стипендия')">
+                            <button class="stipendia">
+                                За стипендия
+                            </button>
+                        </a>
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <input type="hidden" name="fighting_for" id="fighting_for">
+    <button type="submit" class="btn">Продължи напред</button>
+</form>
+</div>
+
+<script>
+    function selectOption(value) {
+        
+        document.getElementById('fighting_for').value = value;
+    }
+</script>
+
+</body>
+
+</html>
